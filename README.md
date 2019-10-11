@@ -1,7 +1,7 @@
 # DalliKlick
  
 Download and start 
-<a download="DalliKlick.exe" href="/builds">
+<a href="/builds/DalliKlick.exe" download>
     DalliKlick.exe
 </a>
 <br/>Add images to the "Bilder" directory
