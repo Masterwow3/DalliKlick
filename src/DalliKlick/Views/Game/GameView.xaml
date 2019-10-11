@@ -1,0 +1,20 @@
+﻿<UserControl x:Class="DalliKlick.Views.Game.GameView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:DalliKlick.Views.Game"
+             xmlns:overlays="clr-namespace:DalliKlick.Views.Game.Overlays"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800">
+    <Grid>
+        <Image HorizontalAlignment="Center"
+                   VerticalAlignment="Stretch"
+                   x:Name="BackgroundImage"
+                   Source="{Binding CurrentGame.Bitmap, Mode=OneWay}"/>
+        <overlays:OverlayManager Width="{Binding ElementName=BackgroundImage, Path=ActualWidth, Mode=OneWay}"
+                    HorizontalAlignment="Center"
+                    VerticalAlignment="Stretch"
+                    CurrentOverlay="{Binding Overlay}"/>
+    </Grid>
+</UserControl>

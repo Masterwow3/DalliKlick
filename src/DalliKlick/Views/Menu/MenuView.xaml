@@ -1,0 +1,53 @@
+﻿<UserControl x:Class="DalliKlick.Views.Menu.MenuView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:DalliKlick.Views.Menu"
+             xmlns:dxlc="http://schemas.devexpress.com/winfx/2008/xaml/layoutcontrol"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800">
+    <dxlc:LayoutControl Orientation="Vertical"
+                        HorizontalAlignment="Stretch"
+                        ScrollBars="None">
+        <dxlc:LayoutItem HorizontalAlignment="Center">
+            <TextBlock Text="Dalli Klick"
+                       FontSize="50"
+                       FontWeight="Bold">
+                <TextBlock.Effect>
+                    <DropShadowEffect ShadowDepth="4" Direction="330" Color="Gray" Opacity="0.5" BlurRadius="4"/>
+                </TextBlock.Effect>
+            </TextBlock>
+        </dxlc:LayoutItem>
+        <dxlc:LayoutGroup>
+            <dxlc:LayoutGroup Orientation="Vertical">
+                <dxlc:LayoutItem VerticalAlignment="Stretch">
+                    <Image Source="{Binding PreviousGameItem.Bitmap, Mode=OneWay}"/>
+                </dxlc:LayoutItem>
+                <dxlc:LayoutItem>
+                    <Button Content="Zurück"
+                            Command="{Binding BackCommand}"/>
+                </dxlc:LayoutItem>
+            </dxlc:LayoutGroup>
+            <dxlc:LayoutGroup Orientation="Vertical">
+                <dxlc:LayoutItem VerticalAlignment="Stretch">
+                        <Image Source="{Binding CurrentGameItem.Bitmap, Mode=OneWay}"/>
+                    </dxlc:LayoutItem>
+                <dxlc:LayoutItem HorizontalAlignment="Center">
+                    <TextBlock>
+                        <Run Text="Bild "/><Run Text="{Binding CurrentGameItemDisplayIndex, Mode=OneWay}"/><Run Text=" von "/><Run Text="{Binding GameItemsDisplayCount, Mode=OneWay}"/>
+                    </TextBlock>
+                </dxlc:LayoutItem>
+            </dxlc:LayoutGroup>
+            <dxlc:LayoutGroup Orientation="Vertical">
+                <dxlc:LayoutItem VerticalAlignment="Stretch">
+                    <Image Source="{Binding NextGameItem.Bitmap, Mode=OneWay}"/>
+                </dxlc:LayoutItem>
+                <dxlc:LayoutItem>
+                        <Button Content="Weiter"
+                                Command="{Binding NextCommand}"/>
+                    </dxlc:LayoutItem>
+                </dxlc:LayoutGroup>
+        </dxlc:LayoutGroup>
+    </dxlc:LayoutControl>
+</UserControl>
